@@ -1,11 +1,12 @@
+@use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
 .g-card {
   background: white;
-  border: 1px solid map-get($g-colors, "light");
-  border-radius: map-get($g-radius, "lg");
-  padding: map-get($g-spacing, "6") || 1.5rem;
+  border: 1px solid map.get($g-colors, "light");
+  border-radius: map.get($g-radius, "lg");
+  padding: map.get($g-spacing, "6");
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 
@@ -23,7 +24,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: map-get($g-colors, "dark");
+    color: map.get($g-colors, "dark");
   }
 
   .g-card-subtitle {

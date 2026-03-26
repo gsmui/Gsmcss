@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -5,8 +6,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: map-get($g-spacing, "2") map-get($g-spacing, "4");
-  border-radius: map-get($g-radius, "md");
+  padding: map.get($g-spacing, "2") map.get($g-spacing, "4");
+  border-radius: map.get($g-radius, "md");
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
@@ -22,17 +23,17 @@
   }
 
   &.g-btn-primary {
-    background: map-get($g-colors, "primary");
+    background: map.get($g-colors, "primary");
     color: white;
-    @include g-neon(map-get($g-colors, "primary"));
-    border-color: map-get($g-colors, "primary");
+    @include g-neon(map.get($g-colors, "primary"));
+    border-color: map.get($g-colors, "primary");
   }
 
   &.g-btn-secondary {
-    background: map-get($g-colors, "secondary");
+    background: map.get($g-colors, "secondary");
     color: white;
-    @include g-neon(map-get($g-colors, "secondary"));
-    border-color: map-get($g-colors, "secondary");
+    @include g-neon(map.get($g-colors, "secondary"));
+    border-color: map.get($g-colors, "secondary");
   }
 
   &.g-btn-glass {
@@ -47,22 +48,22 @@
 
   &.g-btn-outline {
     background: transparent;
-    border-color: map-get($g-colors, "primary");
-    color: map-get($g-colors, "primary");
+    border-color: map.get($g-colors, "primary");
+    color: map.get($g-colors, "primary");
 
     &:hover {
-      background: map-get($g-colors, "primary");
+      background: map.get($g-colors, "primary");
       color: white;
     }
   }
 
   &.g-btn-sm {
-    padding: map-get($g-spacing, "1") map-get($g-spacing, "2");
+    padding: map.get($g-spacing, "1") map.get($g-spacing, "2");
     font-size: 0.75rem;
   }
 
   &.g-btn-lg {
-    padding: map-get($g-spacing, "4") map-get($g-spacing, "8");
+    padding: map.get($g-spacing, "4") map.get($g-spacing, "8");
     font-size: 1rem;
   }
 }

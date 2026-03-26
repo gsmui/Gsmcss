@@ -1,11 +1,6 @@
 @use "../abstracts/variables" as *;
 
 @each $key, $val in $g-colors {
-  .g-text-$key { color: $val !important; }
-  .g-bg-$key { background-color: $val !important; }
-  .g-border-$key { border-color: $val !important; }
-
-  .g-glow-$key {
-    box-shadow: 0 0 5px $val, 0 0 20px rgba($val, 0.4);
-  }
+  .g-text-#{$key} { color: $val !important; }
+  .g-bg-#{$key} { background-color: $val !important; }
 }
