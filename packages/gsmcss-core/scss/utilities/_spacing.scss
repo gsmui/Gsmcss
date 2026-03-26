@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+@each $key, $val in $g-spacing {
+  .g-m-$key { margin: $val !important; }
+  .g-mt-$key { margin-top: $val !important; }
+  .g-mb-$key { margin-bottom: $val !important; }
+  .g-ml-$key { margin-left: $val !important; }
+  .g-mr-$key { margin-right: $val !important; }
+
+  .g-p-$key { padding: $val !important; }
+  .g-pt-$key { padding-top: $val !important; }
+  .g-pb-$key { padding-bottom: $val !important; }
+  .g-pl-$key { padding-left: $val !important; }
+  .g-pr-$key { padding-right: $val !important; }
+}

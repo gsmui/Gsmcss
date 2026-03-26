@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+// Glassmorphism Effect
+@mixin g-glass($blur: 12px, $opacity: 0.05) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+// Neon Glow Effect
+@mixin g-neon($color) {
+  box-shadow: 0 0 5px $color,
+              0 0 20px rgba($color, 0.4);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px $color,
+                0 0 40px rgba($color, 0.6);
+    filter: brightness(1.2);
+  }
+}
+
+// Responsive Media Query
+@mixin g-mq($breakpoint) {
+  $size: map-get($g-breakpoints, $breakpoint);
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}

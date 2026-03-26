@@ -1,27 +1,28 @@
-# gsmcss v1.0.0-stable - Full Ecosystem Release
+# gsmcss v1.2.0-stable - The Modular & Cross-Framework Release
 
-We are thrilled to announce the official release of **gsmcss**, a next-generation CSS ecosystem for Laravel 13. This release marks the transition from a library to a complete high-performance platform.
+We are proud to announce **gsmcss v1.2.0**, a major evolution that brings gsmcss to the entire web ecosystem. This release focuses on modularity, NPM distribution, and AI-first development.
 
-## Key Highlights
+## What's New?
 
-- **Scale:** 100,000+ component variations out-of-the-box.
-- **MCP Integration:** Introducing the **gsmcss-mcp-server**, enabling LLMs to build UI using gsmcss natively.
-- **CLI Power:** New `gsm:manage` and `gsm:generate-all` commands for developer productivity.
-- **PHP 8.4 Optimized:** Native support for the latest PHP engine features.
-- **Ready for Production:** Fully tested components for high-traffic environments.
+- **Modular Core:** Refactored SCSS into `gsmcss-core`, now available as an NPM package.
+- **Node.js CLI:** Introducing `npx gsmcss init` for instant project bootstrapping across Laravel, React, and Vue.
+- **CDN Support:** Pre-compiled minified bundles for quick integration via `<link>` tags.
+- **Multi-Framework Recipes:** Official component templates for **React** and **Vue**.
+- **AI-Native Prompts:** New `PROMPT_ENGINEERING.md` guide for generating gsmcss UI using AI agents.
+- **Professional MCP Server:** Enhanced the gsmcss MCP server to support cross-framework generation.
 
-## Downloads & Links
+## How to Upgrade
 
-- [Latest Release (v1.0.0-stable)](https://github.com/gsmcss/laravel/releases/tag/v1.0.0)
-- [gsmcss MCP Server (Node.js)](/gsmcss-mcp-server)
-- [Official Documentation](https://gsmcss.dev/docs)
-- [Component Registry](https://gsmcss.dev/gallery)
+```bash
+npm install gsmcss
+# or
+npx gsmcss init
+```
 
-## Installation Quick Links
-
-- [New Projects Guide](INSTALL.md#new-projects)
-- [Existing Projects Guide](INSTALL.md#existing-projects)
-- [MCP Server Setup](gsmcss-mcp-server/README.md)
+## Full Multi-Framework Roadmap
+- [x] v1.2.0: Modular & Cross-Framework Core
+- [ ] v1.3.0: gsmcss Pro Template Marketplace
+- [ ] v1.4.0: Official VS Code Extension for gsmcss Intellisense
 
 ---
-Developed by the gsmcss Core Team. Follow us on [Twitter](https://twitter.com/gsmcss) for updates.
+Empowering developers to build the future, one 'g-' class at a time.

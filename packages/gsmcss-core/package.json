@@ -1,0 +1,34 @@
+{
+  "name": "gsmcss",
+  "version": "1.2.0",
+  "description": "Professional Hybrid SCSS Framework for modern web applications.",
+  "main": "dist/gsmcss.bundle.css",
+  "style": "dist/gsmcss.bundle.css",
+  "bin": {
+    "gsmcss": "bin/cli.js"
+  },
+  "files": [
+    "dist",
+    "scss",
+    "bin"
+  ],
+  "scripts": {
+    "build": "sass scss/gsmcss.scss dist/gsmcss.bundle.css --style compressed",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "framework",
+    "tailwind",
+    "bootstrap",
+    "laravel",
+    "react",
+    "vue"
+  ],
+  "author": "gsmcss Team",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.71.0"
+  }
+}

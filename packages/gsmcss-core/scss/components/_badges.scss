@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+
+.g-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: map-get($g-radius, "full");
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+
+  &.g-badge-primary {
+    background: rgba(map-get($g-colors, "primary"), 0.1);
+    color: map-get($g-colors, "primary");
+    border-color: rgba(map-get($g-colors, "primary"), 0.2);
+  }
+
+  &.g-badge-success {
+    background: rgba(map-get($g-colors, "success"), 0.1);
+    color: map-get($g-colors, "success");
+    border-color: rgba(map-get($g-colors, "success"), 0.2);
+  }
+
+  &.g-badge-danger {
+    background: rgba(map-get($g-colors, "danger"), 0.1);
+    color: map-get($g-colors, "danger");
+    border-color: rgba(map-get($g-colors, "danger"), 0.2);
+  }
+}

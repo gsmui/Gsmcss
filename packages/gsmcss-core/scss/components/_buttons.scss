@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.g-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($g-spacing, "2") map-get($g-spacing, "4");
+  border-radius: map-get($g-radius, "md");
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.g-btn-primary {
+    background: map-get($g-colors, "primary");
+    color: white;
+    @include g-neon(map-get($g-colors, "primary"));
+    border-color: map-get($g-colors, "primary");
+  }
+
+  &.g-btn-secondary {
+    background: map-get($g-colors, "secondary");
+    color: white;
+    @include g-neon(map-get($g-colors, "secondary"));
+    border-color: map-get($g-colors, "secondary");
+  }
+
+  &.g-btn-glass {
+    @include g-glass(10px, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &.g-btn-outline {
+    background: transparent;
+    border-color: map-get($g-colors, "primary");
+    color: map-get($g-colors, "primary");
+
+    &:hover {
+      background: map-get($g-colors, "primary");
+      color: white;
+    }
+  }
+
+  &.g-btn-sm {
+    padding: map-get($g-spacing, "1") map-get($g-spacing, "2");
+    font-size: 0.75rem;
+  }
+
+  &.g-btn-lg {
+    padding: map-get($g-spacing, "4") map-get($g-spacing, "8");
+    font-size: 1rem;
+  }
+}

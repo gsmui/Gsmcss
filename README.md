@@ -1,55 +1,55 @@
-# gsmcss v1.1.0-stable - The Ultimate Hybrid SCSS Framework
+# gsmcss v1.2.0-stable - The Ultimate Cross-Framework CSS Ecosystem
 
+[![NPM Version](https://img.shields.io/npm/v/gsmcss)](https://www.npmjs.com/package/gsmcss)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-[![Laravel](https://img.shields.io/badge/Laravel-13.x-red.svg)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.4-purple.svg)](https://php.net)
-[![SCSS](https://img.shields.io/badge/SCSS-Dart--Sass-pink.svg)](https://sass-lang.com)
+[![Cross-Framework](https://img.shields.io/badge/Support-Laravel%20%7C%20React%20%7C%20Vue-brightgreen)](https://gsmcss.dev)
 
-**gsmcss** is a high-tech, professional-grade hybrid SCSS framework. It fuses the utility-first flexibility of Tailwind CSS with the component-centric architecture of Bootstrap and the refined aesthetic of shadcn/ui.
+**gsmcss** is a professional-grade, modular hybrid CSS framework. It is now platform-agnostic, supporting **Laravel**, **React**, **Vue**, and standard HTML projects through its powerful SCSS core and Node.js CLI.
 
 ---
 
-## 🚀 The SCSS Engine
-gsmcss is now powered by a robust SCSS architecture, allowing for extreme customization via SCSS maps and professional-grade mixins for **Glassmorphism** and **Neon Glow** effects.
+## ⚡ Quick Start
 
-- **BEM + Atomic:** Uses BEM for components (`.g-btn`) and Atomic for utilities (`.g-m-4`).
-- **Prefix:** All classes are prefixed with `g-` to avoid conflicts.
-- **Dynamic Utilities:** Loops generate 100,000+ utility combinations for spacing, colors, and layouts.
-
----
-
-## 📦 Installation
-
+### Using the CLI (Recommended)
+Bootstrap gsmcss in any project with one command:
 ```bash
-composer require gsmcss/laravel
-npm install -D sass
-php artisan gsmcss:install
+npx gsmcss init
 ```
 
-Update your `vite.config.js`:
-```javascript
-export default defineConfig({
-    plugins: [
-        laravel({
-            input: ['resources/scss/gsmcss.scss', 'resources/js/app.js'],
-            // ...
-        }),
-    ],
-});
+### Installation via NPM
+```bash
+npm install gsmcss
+```
+
+### CDN Integration
+Add gsmcss to your project instantly:
+```html
+<link rel="stylesheet" href="https://cdn.gsmcss.dev/v1.2.0/gsmcss.bundle.min.css">
 ```
 
 ---
 
-## 🎨 Core Mixins
+## 🏗 Modular Architecture
+gsmcss v1.2.0 is built for modularity. Import only what you need:
 
 ```scss
-// Apply Glassmorphism
-.my-card { @include g-glass(); }
-
-// Apply Neon Glow
-.my-button { @include g-neon($primary-color); }
+@use "gsmcss/scss/abstracts/variables";
+@use "gsmcss/scss/components/buttons";
+// Your custom styles here...
 ```
 
 ---
 
-Developed by the gsmcss Core Team. Follow us on [Twitter](https://twitter.com/gsmcss) for updates.
+## 🤖 AI-Driven UI Generation
+gsmcss is optimized for LLMs. Use our [Prompt Engineering Guide](PROMPT_ENGINEERING.md) and the [gsmcss MCP Server](gsmcss-mcp-server/README.md) to build complex interfaces using natural language.
+
+---
+
+## 🗺 Roadmap
+- [x] v1.2.0-stable: Modular & Cross-Framework
+- [ ] v1.3.0: Component Marketplace & Layout Blocks
+- [ ] v2.0.0: gsmcss AI Copilot (Built-in IDE support)
+
+---
+
+Developed by the gsmcss Core Team. Join the revolution on [Discord](https://discord.gg/gsmcss).
