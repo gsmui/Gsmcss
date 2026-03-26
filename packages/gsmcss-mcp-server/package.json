@@ -1,0 +1,16 @@
+{
+  "name": "@gsmcss/mcp-server",
+  "version": "1.2.0",
+  "description": "Professional MCP Server for gsmcss ecosystem.",
+  "main": "index.js",
+  "type": "commonjs",
+  "bin": {
+    "gsmcss-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
+  }
+}
