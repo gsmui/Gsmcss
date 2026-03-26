@@ -53,3 +53,31 @@ gsmcss is optimized for LLMs. Use our [Prompt Engineering Guide](PROMPT_ENGINEER
 ---
 
 Developed by the gsmcss Core Team. Join the revolution on [Discord](https://discord.gg/gsmcss).
+
+---
+
+## 🛠 Local Development & Testing
+
+If you are a developer working on the **gsmcss** source code and wish to test the CLI locally without hitting the public NPM registry, follow these steps:
+
+1. **Clone & Setup:**
+   ```bash
+   git clone https://github.com/gsmcss/gsmcss.git
+   cd gsmcss
+   npm install
+   ```
+
+2. **Link the package:**
+   In the root directory (or `packages/gsmcss-core`), run:
+   ```bash
+   npm link
+   ```
+
+3. **Use the CLI in another project:**
+   Navigate to your project directory and run:
+   ```bash
+   npm link gsmcss
+   npx gsmcss init
+   ```
+
+This creates a local symbolic link that allows you to bypass the `404 Not Found` error until the package is officially published.
