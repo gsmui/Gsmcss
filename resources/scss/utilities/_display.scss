@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as *;
+
+.g-block { display: block !important; }
+.g-inline-block { display: inline-block !important; }
+.g-inline { display: inline !important; }
+.g-hidden { display: none !important; }
+
+@each $bp, $size in $g-breakpoints {
+  @include g-mq($bp) {
+    .g-$bp\:block { display: block !important; }
+    .g-$bp\:hidden { display: none !important; }
+    .g-$bp\:flex { display: flex !important; }
+  }
+}

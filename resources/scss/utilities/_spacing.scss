@@ -1,5 +1,7 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
+// Standard Utilities
 @each $key, $val in $g-spacing {
   .g-m-$key { margin: $val !important; }
   .g-mt-$key { margin-top: $val !important; }
@@ -12,4 +14,18 @@
   .g-pb-$key { padding-bottom: $val !important; }
   .g-pl-$key { padding-left: $val !important; }
   .g-pr-$key { padding-right: $val !important; }
+}
+
+// Responsive Variants
+@each $bp, $size in $g-breakpoints {
+  @include g-mq($bp) {
+    @each $key, $val in $g-spacing {
+      .g-$bp\:m-$key { margin: $val !important; }
+      .g-$bp\:mt-$key { margin-top: $val !important; }
+      .g-$bp\:mb-$key { margin-bottom: $val !important; }
+      .g-$bp\:p-$key { padding: $val !important; }
+      .g-$bp\:pt-$key { padding-top: $val !important; }
+      .g-$bp\:pb-$key { padding-bottom: $val !important; }
+    }
+  }
 }

@@ -4,25 +4,45 @@ const fs = require('fs');
 const path = require('path');
 
 const action = process.argv[2];
+const version = '1.2.1';
+
+if (action === '--version' || action === '-v') {
+  console.log(`gsmcss v${version}`);
+  process.exit(0);
+}
 
 if (action === 'init') {
   console.log('🚀 Initializing gsmcss...');
 
-  // Simulation of framework detection and installation
   const cwd = process.cwd();
-  const isLaravel = fs.existsSync(path.join(cwd, 'artisan'));
-  const isReact = fs.existsSync(path.join(cwd, 'src', 'App.js')) || fs.existsSync(path.join(cwd, 'src', 'App.tsx'));
+  const configPath = path.join(cwd, 'gsmcss.config.js');
 
-  if (isLaravel) {
-    console.log('📦 Detected Laravel project. Setting up gsmcss-core...');
-  } else if (isReact) {
-    console.log('📦 Detected React project. Integrating gsmcss-core SCSS...');
-  } else {
-    console.log('📦 Standard project detected. Generating gsmcss.config.js...');
+  if (!fs.existsSync(configPath)) {
+    console.log('📝 Generating gsmcss.config.js...');
+    fs.writeFileSync(configPath, `module.exports = {
+  prefix: 'g-',
+  theme: {
+    colors: {
+      primary: '#1E40AF',
+      secondary: '#FF3131',
+    }
+  }
+};`);
+  }
+
+  // Create base scss directory if it doesn't exist
+  const scssDir = path.join(cwd, 'resources', 'scss');
+  if (!fs.existsSync(scssDir)) {
+    fs.mkdirSync(scssDir, { recursive: true });
+    console.log(`📁 Created ${scssDir}`);
   }
 
   console.log('✅ gsmcss initialized successfully!');
-  console.log('💡 Run "npm install gsmcss" to complete the setup.');
+  console.log('💡 Next steps:');
+  console.log('   1. Run "npm install gsmcss"');
+  console.log('   2. Import gsmcss in your main SCSS file.');
 } else {
-  console.log('Usage: npx gsmcss init');
+  console.log('Usage:');
+  console.log('  npx gsmcss init      Initialize gsmcss in current project');
+  console.log('  npx gsmcss --version Show version');
 }

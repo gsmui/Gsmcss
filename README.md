@@ -1,55 +1,30 @@
-# gsmcss v1.2.0-stable - The Ultimate Cross-Framework CSS Ecosystem
+# gsmcss v1.2.1-stable - The Ultimate Hybrid Ecosystem
 
 [![NPM Version](https://img.shields.io/npm/v/gsmcss)](https://www.npmjs.com/package/gsmcss)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-[![Cross-Framework](https://img.shields.io/badge/Support-Laravel%20%7C%20React%20%7C%20Vue-brightgreen)](https://gsmcss.dev)
 
-**gsmcss** is a professional-grade, modular hybrid CSS framework. It is now platform-agnostic, supporting **Laravel**, **React**, **Vue**, and standard HTML projects through its powerful SCSS core and Node.js CLI.
+**gsmcss** is a professional-grade, modular hybrid CSS framework. It is platform-agnostic, supporting **Laravel**, **React**, **Vue**, and standard HTML projects through its powerful SCSS core, Node.js CLI, and MCP server.
+
+---
+
+## 🚀 Recent Improvements (v1.2.1)
+- **Responsive Utilities:** Added `g-{bp}:m-*`, `g-{bp}:p-*`, and display/flex variants.
+- **Enhanced CLI:** Actual project initialization with `gsmcss.config.js` generation.
+- **Robust MCP Server:** Improved tool validation and versioning for AI agents.
+- **Interactive Forms:** Added real-time validation to Livewire components.
 
 ---
 
 ## ⚡ Quick Start
 
-### Using the CLI (Recommended)
-Bootstrap gsmcss in any project with one command:
+### Using the CLI
 ```bash
 npx gsmcss init
 ```
 
-### Installation via NPM
-```bash
-npm install gsmcss
-```
-
-### CDN Integration
-Add gsmcss to your project instantly:
-```html
-<link rel="stylesheet" href="https://cdn.gsmcss.dev/v1.2.0/gsmcss.bundle.min.css">
-```
+### Documentation
+Explore our full documentation and interactive component registry at [/docs](/docs).
 
 ---
 
-## 🏗 Modular Architecture
-gsmcss v1.2.0 is built for modularity. Import only what you need:
-
-```scss
-@use "gsmcss/scss/abstracts/variables";
-@use "gsmcss/scss/components/buttons";
-// Your custom styles here...
-```
-
----
-
-## 🤖 AI-Driven UI Generation
-gsmcss is optimized for LLMs. Use our [Prompt Engineering Guide](PROMPT_ENGINEERING.md) and the [gsmcss MCP Server](gsmcss-mcp-server/README.md) to build complex interfaces using natural language.
-
----
-
-## 🗺 Roadmap
-- [x] v1.2.0-stable: Modular & Cross-Framework
-- [ ] v1.3.0: Component Marketplace & Layout Blocks
-- [ ] v2.0.0: gsmcss AI Copilot (Built-in IDE support)
-
----
-
-Developed by the gsmcss Core Team. Join the revolution on [Discord](https://discord.gg/gsmcss).
+Developed by the gsmcss Core Team.

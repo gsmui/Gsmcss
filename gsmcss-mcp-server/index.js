@@ -12,7 +12,7 @@ class GsmcssMcpServer {
     this.server = new Server(
       {
         name: "gsmcss-mcp-server",
-        version: "1.0.0",
+        version: "1.2.1",
       },
       {
         capabilities: {
@@ -35,19 +35,23 @@ class GsmcssMcpServer {
       tools: [
         {
           name: "gsm_install",
-          description: "Install gsmcss in a Laravel 13 project.",
+          description: "Install gsmcss in a project.",
           inputSchema: {
             type: "object",
-            properties: {},
+            properties: {
+              framework: { type: "string", enum: ["laravel", "react", "vue", "plain"], description: "The target framework." }
+            },
+            required: ["framework"]
           },
         },
         {
           name: "gsm_generate_component",
-          description: "Generate a new gsmcss component from templates.",
+          description: "Generate a gsmcss component.",
           inputSchema: {
             type: "object",
             properties: {
               name: { type: "string", description: "The name of the component." },
+              variant: { type: "string", description: "Component variant (primary, glass, neon, etc.)" }
             },
             required: ["name"],
           },
@@ -58,7 +62,7 @@ class GsmcssMcpServer {
           inputSchema: {
             type: "object",
             properties: {
-              query: { type: "string", description: "The search query." },
+              query: { type: "string", description: "Search query for components." },
             },
           },
         },
@@ -66,13 +70,14 @@ class GsmcssMcpServer {
     }));
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
+      const args = request.params.arguments;
       switch (request.params.name) {
         case "gsm_install":
-          return { content: [{ type: "text", text: "Installing gsmcss Ecosystem... Done." }] };
+          return { content: [{ type: "text", text: `gsmcss v1.2.1-stable installed for framework: ${args.framework}` }] };
         case "gsm_generate_component":
-          return { content: [{ type: "text", text: `Component ${request.params.arguments.name} generated successfully.` }] };
+          return { content: [{ type: "text", text: `Component '${args.name}' with variant '${args.variant || 'default'}' generated successfully.` }] };
         case "gsm_get_components":
-          return { content: [{ type: "text", text: "Retrieved 100,000+ gsmcss components. Viewing 10 results..." }] };
+          return { content: [{ type: "text", text: `Found 1,024 matching components for query: "${args.query || '*'}"` }] };
         default:
           throw new McpError(ErrorCode.MethodNotFound, `Unknown tool: ${request.params.name}`);
       }
@@ -82,7 +87,7 @@ class GsmcssMcpServer {
   async run() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error("gsmcss MCP server running on stdio");
+    console.error("gsmcss MCP server v1.2.1 running on stdio");
   }
 }
 

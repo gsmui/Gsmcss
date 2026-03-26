@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .g-flex { display: flex !important; }
 .g-inline-flex { display: inline-flex !important; }
 .g-flex-col { flex-direction: column !important; }
@@ -6,6 +8,15 @@
 .g-justify-center { justify-content: center !important; }
 .g-justify-between { justify-content: space-between !important; }
 .g-flex-wrap { flex-wrap: wrap !important; }
+
+@each $bp, $size in $g-breakpoints {
+  @include g-mq($bp) {
+    .g-$bp\:flex-row { flex-direction: row !important; }
+    .g-$bp\:flex-col { flex-direction: column !important; }
+    .g-$bp\:justify-between { justify-content: space-between !important; }
+  }
+}
+
 .g-gap-1 { gap: 0.25rem !important; }
 .g-gap-2 { gap: 0.5rem !important; }
 .g-gap-4 { gap: 1rem !important; }
