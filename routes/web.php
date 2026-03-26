@@ -20,3 +20,4 @@ Route::get('/admin', AdminDashboard::class)->middleware(['auth'])->name('admin.d
 Route::get('/checkout', Checkout::class)->middleware(['auth'])->name('checkout');
 
 require __DIR__.'/auth.php';
+Route::get('/gallery', \App\Livewire\ComponentGallery::class)->name('gallery');
