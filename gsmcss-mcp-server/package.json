@@ -1,0 +1,17 @@
+{
+  "name": "gsmcss-mcp-server",
+  "version": "1.2.1",
+  "description": "Model Context Protocol server for gsmcss framework management.",
+  "main": "index.js",
+  "bin": {
+    "gsmcss-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0"
+  },
+  "author": "gsmcss Team",
+  "license": "MIT"
+}

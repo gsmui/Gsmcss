@@ -70,10 +70,10 @@ class GsmcssMcpServer {
     }));
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
-      const args = request.params.arguments;
+      const args = request.params.arguments || {};
       switch (request.params.name) {
         case "gsm_install":
-          return { content: [{ type: "text", text: `gsmcss v1.2.1-stable installed for framework: ${args.framework}` }] };
+          return { content: [{ type: "text", text: `gsmcss v1.2.1-stable installed for framework: ${args.framework || 'unknown'}` }] };
         case "gsm_generate_component":
           return { content: [{ type: "text", text: `Component '${args.name}' with variant '${args.variant || 'default'}' generated successfully.` }] };
         case "gsm_get_components":

@@ -11,7 +11,7 @@
 - **Responsive Utilities:** Added `g-{bp}:m-*`, `g-{bp}:p-*`, and display/flex variants.
 - **Enhanced CLI:** Actual project initialization with `gsmcss.config.js` generation.
 - **Robust MCP Server:** Improved tool validation and versioning for AI agents.
-- **Interactive Forms:** Added real-time validation to Livewire components.
+- **Packaged Ecosystem:** Modularized core and server into professional NPM-ready structures.
 
 ---
 
@@ -20,6 +20,13 @@
 ### Using the CLI
 ```bash
 npx gsmcss init
+```
+
+### MCP Server Installation
+```bash
+cd gsmcss-mcp-server
+npm install
+node install.js
 ```
 
 ### Documentation
