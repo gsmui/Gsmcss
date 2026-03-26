@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gsm-background: 0 0% 100%;
+    --gsm-foreground: 222.2 84% 4.9%;
+    --gsm-card: 0 0% 100%;
+    --gsm-card-foreground: 222.2 84% 4.9%;
+    --gsm-popover: 0 0% 100%;
+    --gsm-popover-foreground: 222.2 84% 4.9%;
+    --gsm-primary: 221.2 83.2% 53.3%;
+    --gsm-primary-foreground: 210 40% 98%;
+    --gsm-secondary: 210 40% 96.1%;
+    --gsm-secondary-foreground: 222.2 47.4% 11.2%;
+    --gsm-muted: 210 40% 96.1%;
+    --gsm-muted-foreground: 215.4 16.3% 46.9%;
+    --gsm-accent: 210 40% 96.1%;
+    --gsm-accent-foreground: 222.2 47.4% 11.2%;
+    --gsm-destructive: 0 84.2% 60.2%;
+    --gsm-destructive-foreground: 210 40% 98%;
+    --gsm-border: 214.3 31.8% 91.4%;
+    --gsm-input: 214.3 31.8% 91.4%;
+    --gsm-ring: 221.2 83.2% 53.3%;
+    --gsm-radius: 0.5rem;
+  }
+
+  .dark {
+    --gsm-background: 222.2 84% 4.9%;
+    --gsm-foreground: 210 40% 98%;
+    --gsm-card: 222.2 84% 4.9%;
+    --gsm-card-foreground: 210 40% 98%;
+    --gsm-popover: 222.2 84% 4.9%;
+    --gsm-popover-foreground: 210 40% 98%;
+    --gsm-primary: 217.2 91.2% 59.8%;
+    --gsm-primary-foreground: 222.2 47.4% 11.2%;
+    --gsm-secondary: 217.2 32.6% 17.5%;
+    --gsm-secondary-foreground: 210 40% 98%;
+    --gsm-muted: 217.2 32.6% 17.5%;
+    --gsm-muted-foreground: 215 20.2% 65.1%;
+    --gsm-accent: 217.2 32.6% 17.5%;
+    --gsm-accent-foreground: 210 40% 98%;
+    --gsm-destructive: 0 62.8% 30.6%;
+    --gsm-destructive-foreground: 210 40% 98%;
+    --gsm-border: 217.2 32.6% 17.5%;
+    --gsm-input: 217.2 32.6% 17.5%;
+    --gsm-ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer components {
+  .gsm-btn {
+    @apply inline-flex items-center justify-center rounded-gsm-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gsm-primary disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .gsm-btn-primary {
+    @apply bg-gsm-primary text-white hover:bg-gsm-primary/90;
+  }
+
+  .gsm-card {
+    @apply rounded-gsm-lg border border-gsm-200 bg-white p-6 shadow-gsm-soft dark:border-gsm-800 dark:bg-gsm-900;
+  }
+
+  /* Bootstrap-like Grid */
+  .gsm-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
